@@ -3,8 +3,10 @@ import os
 TODO_FILE = "tasks.json"
 
 def load_tasks():
-    with open(TODO_FILE, 'r') as f:
-        return json.load(f)
+    if os.path.exists(TODO_FILE):
+        with open(TODO_FILE, 'r') as f:
+            return json.load(f)
+    return []
 def save_tasks():
     pass
 def show_tasks():
@@ -19,7 +21,6 @@ def complete_task():
 def main():
     print("Hello from todo-app!")
     tasks = load_tasks()
-
 
 if __name__ == "__main__":
     main()
