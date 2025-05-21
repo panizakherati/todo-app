@@ -7,8 +7,9 @@ def load_tasks():
         with open(TODO_FILE, 'r') as f:
             return json.load(f)
     return []
-def save_tasks():
-    pass
+def save_tasks(data):
+    with open(TODO_FILE, 'w') as f:
+        json.dump(data,f)
 def show_tasks():
     pass
 def add_task():
