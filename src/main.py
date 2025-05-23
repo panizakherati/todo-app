@@ -16,8 +16,15 @@ def save_tasks(data):
         json.dump(data, f, indent=2)
 
 
-def show_tasks():
-    pass
+def show_tasks(data):
+    if not data:
+        print("No tasks found.")
+        return
+    print("\nyour tasks:")
+    for i, task in enumerate(data, 1):
+        status = "done" if task.get("completed") else " "
+        print(f"{i}.[{status}] {task['title']}")
+    print()
 
 
 def add_task():
