@@ -33,8 +33,11 @@ def add_task(data, title):
     print(f"tasks added :{title}")
 
 
-def complete_task():
-    pass
+def complete_task(data, task_id):
+    if 1 <= task_id <= len(data):
+        data[task_id - 1]["completed"] = True
+    else:
+        print("Task ID Invalid")
 
 
 def main():
