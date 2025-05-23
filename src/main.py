@@ -27,8 +27,10 @@ def show_tasks(data):
     print()
 
 
-def add_task():
-    pass
+def add_task(data, title):
+    data.append({"title": title, "completed": False})
+    save_tasks(data)
+    print(f"tasks added :{title}")
 
 
 def complete_task():
