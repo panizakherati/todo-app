@@ -41,8 +41,20 @@ def complete_task(data, task_id):
 
 
 def main():
-    print("Hello from todo-app!")
-    # tasks = load_tasks()
+    loaded_tasks = load_tasks()
+    while True:
+        print("\nWelcome to ToDo App")
+        print("1.Show all tasks")
+        print("2.Add a task")
+        print("3.Complete a task")
+        print("4.Exit")
+
+        user_choice = input("\nEnter your choice(1-4): ")
+        if user_choice == "1":
+            show_tasks(loaded_tasks)
+        elif user_choice == "2":
+            todo_title = input("Enter task title: ")
+            add_task(data=loaded_tasks, title=todo_title)
 
 
 if __name__ == "__main__":
